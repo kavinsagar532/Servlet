@@ -7,10 +7,12 @@ import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletResponse;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+@WebServlet("/MyServlet")
 public class MyServlet extends HttpServlet
 {
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException , IOException
@@ -23,7 +25,7 @@ public class MyServlet extends HttpServlet
 		out.println(str);
 		
 		ServletContext ctx = getServletContext();
-		String str1 = ctx.getInitParameter("name");
+		String str1 = ctx.getInitParameter("phone");
 		
 		out.println(str1);
 
